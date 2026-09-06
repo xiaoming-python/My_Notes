@@ -1,0 +1,280 @@
+{
+  "main": {
+    "id": "daaba64002686f8a",
+    "type": "split",
+    "children": [
+      {
+        "id": "c946b47612d3e07e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "eb41bc22b5cedd01",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "mysql/mysql语句.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "mysql语句"
+            }
+          },
+          {
+            "id": "3d0325d062292187",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "c和c++/c/c语法基础.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "c语法基础"
+            }
+          },
+          {
+            "id": "d170f51cb7637818",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "git/git笔记.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "git笔记"
+            }
+          },
+          {
+            "id": "e167a5c028d1d6ae",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "终端基础/windows终端.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "windows终端"
+            }
+          }
+        ],
+        "currentTab": 2
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "adca5fcccaaa6173",
+    "type": "split",
+    "children": [
+      {
+        "id": "029c721aebf4e0bd",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ca0bc869422ec0ad",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "byModifiedTime",
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
+            }
+          },
+          {
+            "id": "77deb4243bacde34",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
+            }
+          },
+          {
+            "id": "3b0e3475485118dc",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-bookmark",
+              "title": "书签"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "31bf862986971b3a",
+    "type": "split",
+    "children": [
+      {
+        "id": "900a334c9f33c778",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "496e867e7554455c",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": true,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "反向链接"
+            }
+          },
+          {
+            "id": "146b4f1223e9fdac",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "出链"
+            }
+          },
+          {
+            "id": "df1d60cc87399367",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
+            }
+          },
+          {
+            "id": "dad36c4c6a501780",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "添加笔记属性"
+            }
+          },
+          {
+            "id": "f6c478bea0e667ee",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "git/git笔记.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "大纲"
+            }
+          },
+          {
+            "id": "cb8230b72c1ee94b",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "关系图谱"
+            }
+          }
+        ],
+        "currentTab": 4
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "bases:新建数据库": false
+    }
+  },
+  "active": "d170f51cb7637818",
+  "lastOpenFiles": [
+    "c和c++/c/c语法基础.md",
+    "c和c++/下载第三方库.md",
+    "mysql/mysql语句.md",
+    "终端基础/windows终端.md",
+    "git/git笔记.md",
+    "终端基础/终端基础.md",
+    "我的记事本.md",
+    "git",
+    "c和c++/c/C位运算和符逻辑运算符.md",
+    "c和c++/c/c目录.md",
+    "c和c++/c/C.md",
+    "c和c++/创建库与连接外部库.md",
+    "python/python断点.md",
+    "c和c++/c++/C++目录.md",
+    "c和c++/c++",
+    "c和c++/c",
+    "c和c++",
+    "笔记.zip",
+    "c++/c++引用外部库.md",
+    "c++目录",
+    "c++",
+    "python/python虚拟环境.md",
+    "python/python目录.md",
+    "python/python生态库.md",
+    "终端基础/Termux终端.md",
+    "终端基础/Ubuntu终端.md",
+    "终端目录",
+    "终端基础",
+    "笔记一目录.md",
+    "mysql/mysql_cmd.md",
+    "mysql/mysql目录.md",
+    "python/DrissionPage库笔记.md",
+    "python/python生态库笔记.md",
+    "笔记.rar",
+    "().md"
+  ]
+}
