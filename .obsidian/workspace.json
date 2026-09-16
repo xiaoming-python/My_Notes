@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "c和c++/c/c语法基础.md",
+                "file": "c和c++/c/c语言gdb手动断点.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "c语法基础"
+              "title": "c语言gdb手动断点"
             }
           },
           {
@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "计算机网络/华为交换机.md",
+                "file": "web/php语法.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "华为交换机"
+              "title": "php语法"
             }
           },
           {
@@ -64,7 +64,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -202,9 +202,9 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "计算机网络/华为交换机.md",
+                "file": "c和c++/c/c语言gdb手动断点.md",
                 "followCursor": false,
-                "showSearch": false,
+                "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
@@ -239,22 +239,26 @@
       "bases:新建数据库": false
     }
   },
-  "active": "d170f51cb7637818",
+  "active": "3d0325d062292187",
   "lastOpenFiles": [
-    "git/git笔记.md",
-    "计算机网络/华为交换机.md",
-    "计算机网络",
-    "web/Apache命令行.md",
     "c和c++/c/c语法基础.md",
+    "c和c++/c/c语言gdb手动断点.md",
+    "c和c++/c/c目录.md",
     "终端基础/windows终端.md",
+    "web/php语法.md",
+    "mysql/mysql语句.md",
+    "mysql/mysql_cmd.md",
+    "python/python虚拟环境.md",
+    "web/Apache命令行.md",
+    "计算机网络/华为交换机.md",
+    "git/git笔记.md",
+    "计算机网络",
     "web",
     "c和c++/下载第三方库.md",
-    "mysql/mysql语句.md",
     "终端基础/终端基础.md",
     "我的记事本.md",
     "git",
     "c和c++/c/C位运算和符逻辑运算符.md",
-    "c和c++/c/c目录.md",
     "c和c++/c/C.md",
     "c和c++/创建库与连接外部库.md",
     "python/python断点.md",
@@ -266,16 +270,12 @@
     "c++/c++引用外部库.md",
     "c++目录",
     "c++",
-    "python/python虚拟环境.md",
     "python/python目录.md",
     "python/python生态库.md",
     "终端基础/Termux终端.md",
     "终端基础/Ubuntu终端.md",
     "终端目录",
     "笔记一目录.md",
-    "mysql/mysql_cmd.md",
-    "mysql/mysql目录.md",
-    "python/DrissionPage库笔记.md",
-    "python/python生态库笔记.md"
+    "mysql/mysql目录.md"
   ]
 }

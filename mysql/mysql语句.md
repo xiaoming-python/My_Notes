@@ -1,4 +1,5 @@
 # MySQL服务
+```
 -  退出mysql交互式
 ```mysql
 exit;

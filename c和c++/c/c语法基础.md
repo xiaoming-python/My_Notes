@@ -310,6 +310,18 @@ int a;
 数组名`str`就类似这种常量，不能被赋值。
 
 #### 简单来说 `str [0]` 等价与 `*(str+0)`，`str+0` 是地址，`*(str+0)='A"`对它解引用，访问这块内存，赋值字符`'A'`,`str`不是变量，是地址常量，常量不能做赋值运算
+
+# `snprintf` 字符串格式化
+
+```c
+#include <stdio.h>
+int main(){
+int a=10;
+char str1[50];
+snprintf(str1,sizeof(str1),"数字为：%d",a);
+printf("%s",str1);//输出数字为：10
+}
+```
 # C 内存分区（程序跑起来之后，内存分为 4 大块）
 
 1. **栈 stack**
