@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "web/php语法.md",
+                "file": "计算机网络/华为交换机.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "php语法"
+              "title": "华为交换机"
             }
           },
           {
@@ -64,7 +64,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -202,7 +202,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "c和c++/c/c语言gdb手动断点.md",
+                "file": "计算机网络/华为交换机.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
@@ -239,19 +239,19 @@
       "bases:新建数据库": false
     }
   },
-  "active": "3d0325d062292187",
+  "active": "d170f51cb7637818",
   "lastOpenFiles": [
-    "c和c++/c/c语法基础.md",
-    "c和c++/c/c语言gdb手动断点.md",
-    "c和c++/c/c目录.md",
     "终端基础/windows终端.md",
+    "计算机网络/华为交换机.md",
+    "c和c++/c/c语法基础.md",
+    "git/git笔记.md",
     "web/php语法.md",
     "mysql/mysql语句.md",
+    "c和c++/c/c语言gdb手动断点.md",
+    "c和c++/c/c目录.md",
     "mysql/mysql_cmd.md",
     "python/python虚拟环境.md",
     "web/Apache命令行.md",
-    "计算机网络/华为交换机.md",
-    "git/git笔记.md",
     "计算机网络",
     "web",
     "c和c++/下载第三方库.md",
