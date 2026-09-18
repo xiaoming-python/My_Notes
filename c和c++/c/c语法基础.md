@@ -17,7 +17,7 @@ int main(){
 ```c
 #include <stdio.h>
 void func(int *p){
-	printf("参数的值：%d\n参数的地址：%p",*p,p)
+	printf("参数的值：%d\n参数的地址：%p",*p,p);
 }
 int main(){
 	int a=12;
@@ -27,7 +27,7 @@ int main(){
 ```
 ### char 类型指针变量
 定义`char *str;`
-`str 是char 类型指针变量。
+`str` 是 char 类型指针变量。
 
 - 所以`str`存放的是地址
 赋值`str="ok";`
