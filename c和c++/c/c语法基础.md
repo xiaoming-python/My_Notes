@@ -1342,8 +1342,9 @@ int main(void)
 
 ## 3. 常见链表种类
 
-1. **单向链表（上面例子）**：只能从头往后走，不能反向遍历
-2. **双向链表**：结构体多一个`prev`指针，可以向前、向后遍历（libuv 里大量用双向链表）
+
+### 1. **单向链表（上面例子）**：只能从头往后走，不能反向遍历
+### 2. **双向链表**：结构体多一个`prev`指针，可以向前、向后遍历（libuv 里大量用双向链表）
 
 ```c
 struct DNode {
@@ -1353,7 +1354,7 @@ struct DNode {
 };
 ```
 
-- 双链表连接时的注意事项
+### 3. 双链表连接时的注意事项
 ```c
 ...
 struct node * new_node(int val){
@@ -1374,7 +1375,22 @@ int main(){
 }
 ```
 
-3. **循环链表**：尾节点的 next 指向头节点，不是 NULL
+### 4.简单优化的写法
+将 `mian` 里面的节点连接修改
+```c
+...
+int main(){
+	struct node *node_p1=new_node(1);
+    struct node * save=node_p1;//使用临时指针代替node_p1->next...
+    save->next=new_node(2);
+    save->next->prev=node_p1;
+    save=save->next;
+    save->next=new_node(3);
+    save->next->prev=save;
+	return 0;
+}
+```
+### 4. **循环链表**：尾节点的 next 指向头节点，不是 NULL
 
 ## 4. 链表常用操作
 
