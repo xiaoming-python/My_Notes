@@ -1268,3 +1268,178 @@ u.num = 0x01020304;
 - **类型强转（指针截断）**：通过 `char*` 指针读取 `int` 变量的第一个字节时，在大端和小端下得到的结果完全不同。
     
 - **联合体（Union）**：利用 `union` 查看内存时，必须清楚当前机器的字节序。
+
+# 链表
+链表就是**手动用结构体 + 指针串起来的一串数据**，不像数组是连续内存，链表的每一块内存（节点）可以分散在堆里，靠指针记住下一个节点在哪。
+
+数组：内存连续，随机访问快；**插入删除要大量移动元素，长度固定** 链表：内存分散，只能从头挨个遍历；**插入删除很快，容量动态增长**
+
+## 1. 链表节点（核心：结构体）
+
+一个节点 = **存的数据 + 指向下一个节点的指针**
+
+```c
+// 单链表节点
+struct Node {
+    int data;               // 存放数据
+    struct Node *next;      // 指向下一个节点的指针
+};
+```
+
+- `data`：你要保存的值
+- `next`：保存**下一个节点的地址**；最后一个节点 next = `NULL`，代表链表结束
+
+内存逻辑： `节点1 -> 节点2 -> 节点3 -> NULL`
+
+## 2. 最简单完整示例（单链表）
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+struct Node {
+    int data;
+    struct Node *next;
+};
+
+// 创建新节点
+struct Node* create_node(int val)
+{
+    struct Node *p = malloc(sizeof(struct Node));
+    p->data = val;//将val写入当前结构体
+    p->next = NULL;
+    return p;//返回结构体地址
+}
+
+int main(void)
+{
+    // 手动串3个节点
+    struct Node *head = create_node(10);//第一个节点，接收传来的地址
+    head->next = create_node(20);//第二个节点，第一个结构体中的next接收地址
+    head->next->next = create_node(30);
+
+    // 遍历链表
+    struct Node *cur = head;
+    while(cur != NULL)
+    {
+        printf("%d ", cur->data);
+        cur = cur->next; // 移动到下一个节点
+    }
+
+    // 记得逐个free释放内存！
+    struct Node *tmp;
+    while(head != NULL)
+    {
+        tmp = head;
+        head = head->next;
+        free(tmp);
+    }
+    return 0;
+}
+```
+
+输出：`10 20 30`
+
+## 3. 常见链表种类
+
+1. **单向链表（上面例子）**：只能从头往后走，不能反向遍历
+2. **双向链表**：结构体多一个`prev`指针，可以向前、向后遍历（libuv 里大量用双向链表）
+
+```c
+struct DNode {
+    int data;
+    struct DNode *prev;
+    struct DNode *next;
+};
+```
+
+- 双链表连接时的注意事项
+```c
+...
+struct node * new_node(int val){
+	struct node *p=(struct node *)malloc(sizeof(struct node));
+	node->val=val;
+	node->prev=NULL;
+	node->next=NULL;
+	return p;
+}
+int main(){
+	struct node *node_p1=new_node(1);//创建首个节点
+	node_p1->next=new_node(2);//第二个节点的地址,node_p1->next接收
+	node_p1->next->prev=node_p1;//第一个节点的地址，传给第二个节点的prev
+	node_p1->next->next=new_node(3);//第三个节点
+	node_p1->next->next->prve=node_p1->next;//第二个节点的地址(p1->next),传给第三个节点的prve
+	
+	return 0;
+}
+```
+
+3. **循环链表**：尾节点的 next 指向头节点，不是 NULL
+
+## 4. 链表常用操作
+
+- 新建节点
+- 头部插入、尾部插入
+- 查找某个值
+- 删除指定节点
+- 遍历打印
+- **销毁链表（逐个 free，防止内存泄漏）**
+
+## 5. 和你之前学的知识点关联
+
+- 节点都是`malloc`在堆上分配，不是栈变量，用完必须`free`
+- `->` 专门用来：**结构体指针访问成员** `cur->data` 等价于 `(*cur).data`
+
+> 数组：一块连续内存，下标直接跳着访问 链表：一堆分散小块内存，靠指针串联，只能从头遍历
+
+# 可变参数
+- 需要 `<stdarg.h>` 头文件
+- 
+基础可变参数示例 `（stdarg.h）`
+
+```c
+#include <stdio.h>
+#include <stdarg.h>
+
+// ... 代表可变参数；前面必须至少有一个固定参数（count）
+int sum(int count, ...)
+{
+    va_list ap;         // 1. 定义参数迭代器
+    va_start(ap, count);// 2. 初始化，从count后面开始取参数
+
+    int res = 0;
+    for(int i = 0; i < count; i++)
+    {
+        int val = va_arg(ap, int); // 3. 取出一个int参数
+        res += val;
+    }
+    va_end(ap);         // 4. 清理
+    return res;
+}
+
+int main(void)
+{
+    printf("%d\n", sum(3, 10,20,30)); // count=3，后面3个数字
+    return 0;
+}
+```
+## 关键规则（C 可变参数的坑）
+
+1. **必须至少有 1 个固定参数**，`...` 只能放最后面
+    
+    ```
+    void func(...); // ❌ 非法，不能没有固定参数
+    ```
+    
+2. `va_arg` **必须指定类型**，而且 C 不会自动知道传了多少个参数！
+    - 所以一般要靠：第一个参数传数量（例子里的`count`），或者用标记值（比如 `-1` 代表结束）
+3. **没有类型安全！** 你传 `double`，却用 `va_arg(ap, int)` 读取 → 直接乱码、崩溃。Python *args 会保留类型，C 不会检查。
+4. **没有关键字参数**：C 完全不存在 `**kwargs`，没有键值对。
+## 基本方法
+
+```c
+va_list ap;         // ① 定义一个游标，还没初始化
+va_start(ap, count);// ② 把游标ap定位到【固定参数count的后面】，也就是第一个可变参数位置
+va_arg(ap, int);    // ③ 读取当前位置的int，并且游标自动往后移动，指向下一个参数
+va_end(ap);         // ④ 清理游标ap
+```

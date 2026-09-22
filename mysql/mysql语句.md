@@ -8,6 +8,31 @@ exit;
 ```mysql
 ALTER USER 'username'@'host' IDENTIFIED BY 'new_password';  
 ```
+
+-  **创建用户并设置密码**
+
+-- 语法：CREATE USER '用户名'@'允许访问的主机' IDENTIFIED BY '密码';
+```mysql
+CREATE USER 'myuser'@'localhost' IDENTIFIED BY 'MyPassword123!';
+```
+
+_注意：`'localhost'` 表示只允许本机连接。如果你需要远程连接（比如在 CTF 或实际开发中），需要把 `'localhost'` 改为 `'%'`，即 `'myuser'@'%'`。_
+
+- **授予权限**  
+新建的用户默认没有任何权限，需要赋予权限。
+-- 赋予某个数据库的所有权限
+```mysql
+GRANT ALL PRIVILEGES ON mydatabase.* TO 'myuser'@'localhost';
+```
+-- 或者赋予所有数据库的所有权限（谨慎使用）
+```mysql
+GRANT ALL PRIVILEGES ON *.* TO 'myuser'@'%';
+```
+**刷新权限**
+
+```mysql
+FLUSH PRIVILEGES;
+```
 # MySQL数据库操作
 - 指定数据库
 ```mysql
