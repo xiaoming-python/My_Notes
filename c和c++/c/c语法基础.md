@@ -1408,6 +1408,49 @@ int main(){
 
 > 数组：一块连续内存，下标直接跳着访问 链表：一堆分散小块内存，靠指针串联，只能从头遍历
 
+# 二叉树
+
+- 和链表相似,二叉树多一个结构体指针（两个结构体指针），一个表示左节点，一个表示右节点
+
+```c
+#include"stdio.h"
+#include"stdlib.h"
+struct node {
+	int val;
+	struct node * left;
+	struct node * right;
+};
+```
+手动建立二叉树
+```c
+...
+struct node * new_node(int val){
+	struct node *p=(struct node *)malloc(sizeof(struct node));
+	p->left;
+	p->right;
+	return p;
+}
+
+int main(void){
+	struct node *root=new_node(1);
+	root->left=new_node(2);
+	root->right=new_node(3);
+	root->left->left=new_node(4);
+	root->left->right=new->new_node(5);
+
+}
+```
+- 注意释放内存
+用函数递归遍历(也可以用来遍历查看全部内容)
+```c
+...
+void node_free(struct node *p){
+	if(p==NULL)return;
+	node_free(p->left);
+	node_free(p->right);
+	free(p);
+}
+```
 # 可变参数
 - 需要 `<stdarg.h>` 头文件
 - 
