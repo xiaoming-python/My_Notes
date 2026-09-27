@@ -1447,7 +1447,7 @@ int main(void){
 void node_free(struct node *p){
 	if(p==NULL)return;
 	node_free(p->left);
-	node_free(p->right);
+	node_free(p->right);// 
 	free(p);
 }
 ```

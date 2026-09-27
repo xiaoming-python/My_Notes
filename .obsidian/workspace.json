@@ -242,9 +242,10 @@
   "active": "3d0325d062292187",
   "lastOpenFiles": [
     "计算机网络/华为交换机.md",
+    "c和c++/c/c语法基础.md",
+    "README.md",
     "mysql/mysql_cmd.md",
     "mysql/mysql语句.md",
-    "c和c++/c/c语法基础.md",
     "终端基础/windows终端.md",
     "c和c++/c/c语言gdb手动断点.md",
     "git/git笔记.md",
@@ -275,7 +276,6 @@
     "终端基础/Termux终端.md",
     "终端基础/Ubuntu终端.md",
     "终端目录",
-    "笔记一目录.md",
-    "mysql/mysql目录.md"
+    "笔记一目录.md"
   ]
 }
