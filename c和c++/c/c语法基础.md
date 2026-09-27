@@ -60,7 +60,7 @@ printf("%s",str)//输出值
 #include <stdio.h>
 void (*cd)(int);/*定义一个函数指针*/
 void func1(int a){
-	printf("%d",a)
+	printf("%d",a);
 }
 int main(){
 	cd=func1;/*将函数func1的地址赋值给cd*/
@@ -105,18 +105,18 @@ struct Person {
 	int age;
 	int id;
 	void (*cd) (int);
-}
+};
 void func1 (int a){
-	printf("a:%d",a)
+	printf("a:%d",a);
 }
 int main(){
 	struct Person p1;  //创建一个结构体p1
-	strcpy(p1.name,"tang")
+	strcpy(p1.name,"tang");
 	p1.age=19;         //定义age为19
 	p1.id=123; 
 	p1.cd=func1;
-	p1.cd(4)//执行func1,传递参数4        
-	printf("p1的id是：%d",p1.id)//p1.id查看
+	p1.cd(4);          //执行func1,传递参数4
+	printf("p1的id是：%d",p1.id);//p1.id查看
 	return 0;
 }
 ```
@@ -145,7 +145,7 @@ int main(void)
     // 访问成员：变量.成员名      . 点
 
     // 结构体指针，存s的地址
-    student2 *p=&s//struct Student *p = &s;的别名写法
+    student2 *p=&s;//struct Student *p = &s;的别名写法
 
     // 指针访问结构体成员：指针->成员名    ->箭头
     printf("%d\n", p->id);
@@ -272,7 +272,8 @@ str = "abcd";
 1. 在内存开辟 20 字节连续数组空间。
 2. 把字符串字面量 `"abcd"` 的字符 `a b c d \0`，拷贝到这块数组内存里面。
 3. 剩下没用到的数组元素自动填 0。
- 等价手动展开（编译器内部相当于帮你做了这个）
+
+等价手动展开（编译器内部相当于帮你做了这个）
 
 运行
 
@@ -309,7 +310,7 @@ int a;
 
 数组名`str`就类似这种常量，不能被赋值。
 
-#### 简单来说 `str [0]` 等价与 `*(str+0)`，`str+0` 是地址，`*(str+0)='A"`对它解引用，访问这块内存，赋值字符`'A'`,`str`不是变量，是地址常量，常量不能做赋值运算
+#### 简单来说 `str [0]` 等价与 `*(str+0)`，`str+0` 是地址，`*(str+0)='A'` 对它解引用，访问这块内存，赋值字符 `'A'`,`str` 不是变量，是地址常量，常量不能做赋值运算
 
 # `snprintf` 字符串格式化
 
@@ -377,13 +378,16 @@ int *p = malloc(sizeof(int)); //p变量本身在栈；申请出来的内存在�
 ```c
 ptr = realloc(old_ptr, new_size);
 ```
-- `iod_ptr` 旧的内存地址，`nwe_size` 扩容后的内存大小
+- `old_ptr` 旧的内存地址，`new_size` 扩容后的内存大小
 - 有可能原地扩容；也会找一块新内存，把旧内容拷贝过去，旧内存自动释放。
 - ⚠️不要直接写 `str = realloc(str,cap);`，分配失败返回 NULL，会把原来 `str` 直接弄丢内存泄漏；要用临时变量接收。
 ```c
 ptr=realloc(old_ptr,new_size);
-if(ptr!=NULL){free(str);return 1;}
-str=ptr;
+if(ptr==NULL){
+	/* 扩容失败，old_ptr 仍然有效，这里自行处理（报错/返回） */
+	return 1;
+}
+str=ptr;  /* 扩容成功，用新指针接管内存 */
 ```
 
 > 重点区分：
@@ -541,7 +545,7 @@ void test(void){
 void func1(){
 	static int a = 1;
 	a++;
-	printf("%d",a)
+	printf("%d",a);
 }
 int main(){
 	func1();//输出2
@@ -948,14 +952,14 @@ int main(void)
     return 0;
 }
 ```
-#### `fscanf()`是行读
-重复调用会换行
+#### `fscanf()`是按空白字符分割读取
+重复调用会依次读到下一个字段（空格、制表符、换行都算分隔）
 ```c
 #include <stdio.h>
 
 int main(){
-	FLIE *fp=fopen("data.txt","r");
-	if(fp==NULL){return -1};
+	FILE *fp=fopen("data.txt","r");
+	if(fp==NULL){return -1;}
 	char a[20],b[20];
 	fscanf(fp,"%s",a);
 	fscanf(fp,"%s",b);
@@ -969,8 +973,8 @@ int main(){
 #include <stdio.h>
 
 int main(){
-	FLIE *fp=fopen("data.txt","r");
-	if(fp==NULL){return -1};
+	FILE *fp=fopen("data.txt","r");
+	if(fp==NULL){return -1;}
 	char a[20],b[20];
 	fscanf(fp,"%s\n%s",a,b);
 	printf("第一行:%s\n第二行:%s",a,b);
@@ -1073,7 +1077,7 @@ printf("Length: %zu\n", len); // 正确
 int main(void){
 	int ch;
 	ch=getchar();
-	prinft("%c",ch);
+	printf("%c",ch);
 	
 	return 0;
 }
@@ -1083,7 +1087,7 @@ int main(void){
 for(int a=0;a<5;a++){
 	int ch;
 	ch=getchar();
-	printf("%s",ch);
+	printf("%c",ch);
 	
 }
 ```
@@ -1369,7 +1373,7 @@ int main(){
 	node_p1->next=new_node(2);//第二个节点的地址,node_p1->next接收
 	node_p1->next->prev=node_p1;//第一个节点的地址，传给第二个节点的prev
 	node_p1->next->next=new_node(3);//第三个节点
-	node_p1->next->next->prve=node_p1->next;//第二个节点的地址(p1->next),传给第三个节点的prve
+	node_p1->next->next->prev=node_p1->next;//第二个节点的地址(p1->next),传给第三个节点的prev
 	
 	return 0;
 }
@@ -1426,8 +1430,9 @@ struct node {
 ...
 struct node * new_node(int val){
 	struct node *p=(struct node *)malloc(sizeof(struct node));
-	p->left;
-	p->right;
+	p->val=val;        /* 赋值：把传入的值存进节点 */
+	p->left=NULL;      /* 初始化：新节点左右子树都为空 */
+	p->right=NULL;
 	return p;
 }
 
@@ -1436,7 +1441,7 @@ int main(void){
 	root->left=new_node(2);
 	root->right=new_node(3);
 	root->left->left=new_node(4);
-	root->left->right=new->new_node(5);
+	root->left->right=new_node(5);
 
 }
 ```

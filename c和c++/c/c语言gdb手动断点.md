@@ -1,6 +1,6 @@
 # 编译可调试`exe`文件
 ```bash
-gcc mian.c -g -o mian.exe
+gcc main.c -g -o main.exe
 ```
 - 有要编译连接的要写进去
 # 启动`gdb`,传入`exe`文件
