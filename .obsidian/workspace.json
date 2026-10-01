@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "c和c++/c/c语法基础.md",
+                "file": "c和c++/c/c基础语法/数据结构.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "c语法基础"
+              "title": "数据结构"
             }
           },
           {
@@ -126,7 +126,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "31bf862986971b3a",
@@ -202,7 +203,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "c和c++/c/c语法基础.md",
+                "file": "c和c++/c/c基础语法/数据结构.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
@@ -241,8 +242,8 @@
   },
   "active": "3d0325d062292187",
   "lastOpenFiles": [
-    "c和c++/c/c基础语法/位运算符与逻辑运算符.md",
     "c和c++/c/c语法基础.md",
+    "c和c++/c/c基础语法/位运算符与逻辑运算符.md",
     "c和c++/c/c基础语法/文件IO与可变参数.md",
     "c和c++/c/c基础语法/数据结构.md",
     "c和c++/c/c基础语法/基础语法.md",
