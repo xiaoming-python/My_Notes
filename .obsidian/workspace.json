@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "c和c++/c/c基础语法/数据结构.md",
+                "file": "c和c++/c/c基础语法/指针.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "数据结构"
+              "title": "指针"
             }
           },
           {
@@ -36,20 +36,21 @@
             }
           },
           {
-            "id": "d170f51cb7637818",
+            "id": "5da240aa30d2988c",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "计算机网络/华为交换机.md",
+                "file": "计算机网络/华为交换机命令.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "华为交换机"
+              "title": "华为交换机命令"
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -111,8 +112,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "31bf862986971b3a",
@@ -188,7 +188,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "c和c++/c/c基础语法/数据结构.md",
+                "file": "计算机网络/华为交换机命令.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
@@ -225,27 +225,29 @@
       "bases:新建数据库": false
     }
   },
-  "active": "eb41bc22b5cedd01",
+  "active": "5da240aa30d2988c",
   "lastOpenFiles": [
+    "README.md",
+    "计算机网络/华为交换机命令.md",
     "mysql/mysql_cmd.md",
+    "web/Apache命令行.md",
+    "终端基础/windows终端.md",
+    "mysql/mysql语句补充.md",
+    "mysql/mysql语句.md",
+    "mysql/mysql目录.md",
     "git/git笔记.md",
+    "c和c++/c/c基础语法/指针.md",
+    "c和c++/c/c语法基础.md",
     "c和c++/c/c基础语法/数据结构.md",
     "c和c++/c/c目录.md",
     "c和c++/c/c基础语法/类型与内存.md",
-    "c和c++/c/c基础语法/指针.md",
-    "c和c++/c/c语法基础.md",
     "c和c++/c/c基础语法/基础语法.md",
     "c和c++/c/c基础语法/位运算符与逻辑运算符.md",
     "c和c++/c/c基础语法/文件IO与可变参数.md",
     "c和c++/c/c基础语法",
-    "计算机网络/华为交换机.md",
-    "README.md",
-    "mysql/mysql语句.md",
-    "终端基础/windows终端.md",
     "c和c++/c/c语言gdb手动断点.md",
     "web/php语法.md",
     "python/python虚拟环境.md",
-    "web/Apache命令行.md",
     "计算机网络",
     "web",
     "c和c++/下载第三方库.md",
@@ -255,8 +257,6 @@
     "c和c++/c/C位运算和符逻辑运算符.md",
     "c和c++/c/C.md",
     "c和c++/创建库与连接外部库.md",
-    "python/python断点.md",
-    "c和c++/c++/C++目录.md",
     "c和c++/c++",
     "c和c++/c",
     "c和c++",
